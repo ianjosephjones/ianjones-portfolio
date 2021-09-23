@@ -18,9 +18,9 @@
             >
           </p>
           <ul>
-            <li>West Palm Beach, FL</li>
-            <li>(561) 313-6648</li>
-            <li>ianjosephjones@gmail.com</li>
+            <li>{{ summary.address }}</li>
+            <li>{{ summary.phone }}</li>
+            <li>{{ summary.email }}</li>
           </ul>
         </div>
 
@@ -39,40 +39,15 @@
       </div>
       <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
         <h3 class="resume-title">Professional Experience</h3>
-        <div class="resume-item">
-          <h4>FULL STACK ENGINEER</h4>
-          <h5>2021 - Present</h5>
-          <p><em>Enigma Angency, North Carolina</em></p>
+        <div *ngFor="let item of resumeItems" class="resume-item">
+          <h4>{{ item.title }}</h4>
+          <h5>{{ item.year }}</h5>
+          <p>
+            <em>{{ item.company }}</em>
+          </p>
           <ul>
-            <li>
-              Writing responsive websites using programming languages such as
-              HTML, CSS JavaScript & Bootstrap
-            </li>
-            <li>
-              Incorporating api layers to handle contact forms with two sided
-              email responses
-            </li>
-            <li>Azure api hosting services and Azure static site hosting</li>
-            <li>Deploy environment variables using Azure</li>
-          </ul>
-        </div>
-        <div class="resume-item">
-          <h4>OWNER/OPERATOR OF IAN JOSEPH JONES PHOTOGRAPHY LLC</h4>
-          <h5>2013 - Present</h5>
-          <p><em>Wedding Photography</em></p>
-          <ul>
-            <li>
-              Responsible for all book-keeping, scheduling, and maintain all
-              customer accounts along with monitoring daily business operations
-            </li>
-
-            <li>
-              Currently managing a successful website to showcase my current
-              work & helpful information for potential clients
-            </li>
-            <li>
-              Implementing design and SEO to my website attract more customers
-              as well as maintaining a proper Google ranking
+            <li *ngFor="let desc of item.description">
+              {{ desc }}
             </li>
           </ul>
         </div>
