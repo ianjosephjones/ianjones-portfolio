@@ -10,8 +10,21 @@ export class PortfolioComponent implements OnInit {
 
   constructor() {
     this.projects = [
-      new Project('Enigma.PNG', 'enigmaagency.co', 'Enigma-Agency-1'),
-      new Project('buyboatsAPI.png', 'buyboatsus.com/consignent', 'Boats'),
+      new Project(
+        'Enigma.PNG',
+        'https://www.enigmaagency.co',
+        'Enigma-Agency-1'
+      ),
+      new Project(
+        'Vue-API.PNG',
+        'AAG-Front-end-Developer-Test',
+        'AAG-Front-end-Developer-Test'
+      ),
+      new Project(
+        'buyboatsAPI.png',
+        'https://www.buyboatsus.com/used-boats',
+        'Boats'
+      ),
       new Project('HyWyre.PNG', 'HyWyre-i.t/', 'Enigma-Agency-1', 'current'),
       new Project('Elite_Bodies.png', 'Elitebodies', 'Elitebodies', 'current'),
       new Project(
@@ -38,12 +51,6 @@ export class PortfolioComponent implements OnInit {
         'Scrimba/tree/master/personal_emojis',
         'app'
       ),
-      new Project(
-        'My_Emojis.png',
-        'personal_emojis',
-        'Scrimba/blob/master/functions/minichallenge5.html',
-        'app'
-      ),
     ];
   }
 
@@ -58,8 +65,14 @@ class Project {
 
   constructor(img: string, demo: string, github: string, filter = 'web') {
     this.img = './assets/img/' + img;
+
     this.github = 'https://github.com/ianjosephjones/' + github;
-    this.demo = 'https://www.' + demo;
+    if (demo.includes('www.')) {
+      this.demo = demo;
+    } else {
+      this.demo = 'https://ianjosephjones.github.io/' + demo;
+    }
+
     this.filter = 'filter-' + filter;
   }
 }
