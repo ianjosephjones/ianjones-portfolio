@@ -9,7 +9,7 @@
     "test": "ng test",
     "production": "ng build  --outputPath=docs --baseHref=https://ianjosephjones.github.io/ianjones-portfolio/",
     "production2": "cp docs/index.html docs/404.html",
-    "release-notes": "run 'npm run production', prepend href and src in docs/index.html with 'https://ianjones.tech/', manually run production2, commit, push"
+    "release-notes": "run 'npm run production', prepend href and src in docs/index.html with 'https://ianjones.tech/', manually run production2, commit, push, update gitub pages with custom domain"
   },
   "private": true,
   "dependencies": {
