@@ -8,7 +8,8 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "production": "ng build  --outputPath=docs --baseHref=https://ianjosephjones.github.io/ianjones-portfolio/",
-    "production2": "cp docs/index.html docs/404.html"
+    "production2": "cp docs/index.html docs/404.html",
+    "release-notes": "run 'npm run production', prepend href and src in docs/index.html with 'https://ianjones.tech/', manually run production2, commit, push"
   },
   "private": true,
   "dependencies": {
