@@ -16,6 +16,11 @@ export class PortfolioComponent implements OnInit {
         'Enigma-Agency-1'
       ),
       new Project(
+        'arcane-island-43141.herokuapp.com_.png',
+        'https://arcane-island-43141.herokuapp.com/',
+        'djangoProject'
+      ),
+      new Project(
         'Vue-API.PNG',
         'AAG-Front-end-Developer-Test',
         'AAG-Front-end-Developer-Test'
@@ -67,7 +72,7 @@ class Project {
     this.img = './assets/img/' + img;
 
     this.github = 'https://github.com/ianjosephjones/' + github;
-    if (demo.includes('www.')) {
+    if (demo.includes('www.') || demo.includes('herokuapp')) {
       this.demo = demo;
     } else {
       this.demo = 'https://ianjosephjones.github.io/' + demo;
